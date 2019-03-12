@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customLayouts="clr-namespace:C4S.MobileApp.Views.CustomLayouts"
+             xmlns:customControls="clr-namespace:C4S.MobileApp.Views.CustomsControls"
+             x:Class="C4S.MobileApp.Views.PortfolioElementePage"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <customControls:CollectionViewWithOrientation  
+                x:Name="PortfolioElementeCollectionView"  
+                ItemsSource="{Binding PortfolioElemente}"           
+                >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <customLayouts:SquareLayout Padding="5">
+                            <Frame BackgroundColor="Transparent" Padding="10" HasShadow="False" BorderColor="Gray" >
+                                <Label Text="{Binding Bezeichnung}"
+                                       TextColor="Black"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                />
+                            </Frame>
+                        </customLayouts:SquareLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </customControls:CollectionViewWithOrientation>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
